@@ -31,10 +31,12 @@ class menuViewController: UIViewController {
 
     }
     @IBAction func createGameTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "menuToJoinGameSegue", sender: self)
+        self.performSegue(withIdentifier: "menuToCreateGameSegue", sender: self)
 
     }
     @IBAction func logOutTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "logoutSegue", sender: self)
+
     }
     
 
