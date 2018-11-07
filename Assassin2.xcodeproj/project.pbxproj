@@ -18,9 +18,11 @@
 		A515AEE12188F18E00A2F2AE /* createGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEE02188F18E00A2F2AE /* createGameViewController.swift */; };
 		A515AEE32188F19E00A2F2AE /* currentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEE22188F19E00A2F2AE /* currentGameViewController.swift */; };
 		A515AEE52188F20D00A2F2AE /* joinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEE42188F20D00A2F2AE /* joinGameViewController.swift */; };
+		FE46C1880C9AF253805B8F51 /* Pods_Assassin2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assassin2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A515AEC52188E8FA00A2F2AE /* Assassin2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assassin2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A515AECA2188E8FA00A2F2AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		A515AEE02188F18E00A2F2AE /* createGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createGameViewController.swift; sourceTree = "<group>"; };
 		A515AEE22188F19E00A2F2AE /* currentGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentGameViewController.swift; sourceTree = "<group>"; };
 		A515AEE42188F20D00A2F2AE /* joinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinGameViewController.swift; sourceTree = "<group>"; };
+		D52FC40DEB192A820FFC7BBA /* Pods-Assassin2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assassin2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2.debug.xcconfig"; sourceTree = "<group>"; };
+		E08E6DC9F2D18C4C03409718 /* Pods-Assassin2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assassin2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE46C1880C9AF253805B8F51 /* Pods_Assassin2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DBA96753B57DE1A7A77F2EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D52FC40DEB192A820FFC7BBA /* Pods-Assassin2.debug.xcconfig */,
+				E08E6DC9F2D18C4C03409718 /* Pods-Assassin2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A515AEBC2188E8FA00A2F2AE = {
 			isa = PBXGroup;
 			children = (
 				A515AEC72188E8FA00A2F2AE /* Assassin2 */,
 				A515AEC62188E8FA00A2F2AE /* Products */,
+				1DBA96753B57DE1A7A77F2EC /* Pods */,
+				D3F34A3AD486E11A6D2FCA83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +98,14 @@
 			path = Assassin2;
 			sourceTree = "<group>";
 		};
+		D3F34A3AD486E11A6D2FCA83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A515AED72188E8FC00A2F2AE /* Build configuration list for PBXNativeTarget "Assassin2" */;
 			buildPhases = (
+				6C224002DDC4084A45743E3C /* [CP] Check Pods Manifest.lock */,
 				A515AEC12188E8FA00A2F2AE /* Sources */,
 				A515AEC22188E8FA00A2F2AE /* Frameworks */,
 				A515AEC32188E8FA00A2F2AE /* Resources */,
+				822D489F189D514BDBCBF41B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,6 +173,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C224002DDC4084A45743E3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Assassin2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		822D489F189D514BDBCBF41B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A515AEC12188E8FA00A2F2AE /* Sources */ = {
@@ -302,6 +367,7 @@
 		};
 		A515AED82188E8FC00A2F2AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D52FC40DEB192A820FFC7BBA /* Pods-Assassin2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -320,6 +386,7 @@
 		};
 		A515AED92188E8FC00A2F2AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E08E6DC9F2D18C4C03409718 /* Pods-Assassin2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
