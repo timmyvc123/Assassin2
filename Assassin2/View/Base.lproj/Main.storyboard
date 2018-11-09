@@ -70,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="20"/>
+            <point key="canvasLocation" x="-1028" y="-19"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Hra-ir-om6">
@@ -179,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSx-0S-p37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="817" y="507"/>
+            <point key="canvasLocation" x="191" y="852"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="qpn-uT-Sfr">
@@ -189,6 +189,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eoj-E2-zOL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="Q6v-zE-sGl">
+                                        <barButtonItem key="leftBarButtonItem" title="menu" image="hamburger" id="Ah3-Zs-K9e">
+                                            <connections>
+                                                <action selector="menuTapped:" destination="JnM-md-swH" id="YQP-MO-Fgg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="GzS-bq-NDV">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I0O-Ki-EfX">
+                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Log Out"/>
+                                                <connections>
+                                                    <action selector="logOutTapped:" destination="JnM-md-swH" eventType="touchUpInside" id="vci-Xa-ijq"/>
+                                                </connections>
+                                            </button>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="Wle-WY-iem"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RK2-j4-WTp">
                                 <rect key="frame" x="109" y="257" width="156" height="119"/>
                                 <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -237,28 +262,67 @@
                                     <segue destination="I3K-jB-xCy" kind="presentation" identifier="menuToCurrentGameSegue" id="J6b-GV-Qfm"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eoj-E2-zOL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="Q6v-zE-sGl">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="GzS-bq-NDV">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I0O-Ki-EfX">
-                                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Log Out"/>
-                                                <connections>
-                                                    <action selector="logOutTapped:" destination="JnM-md-swH" eventType="touchUpInside" id="vci-Xa-ijq"/>
-                                                </connections>
-                                            </button>
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="Wle-WY-iem"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cc2-zg-ZMm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="tintColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="screenCoverTapped:" destination="JnM-md-swH" eventType="touchUpInside" id="TzU-l1-mCI"/>
+                                </connections>
+                            </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="la3-90-u1Q">
+                                <rect key="frame" x="0.0" y="0.0" width="97" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUd-UY-lAT">
+                                        <rect key="frame" x="0.0" y="0.0" width="197" height="667"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="y9P-cd-oTm">
+                                        <rect key="frame" x="8" y="28" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="zFe-yB-AwF">
+                                        <rect key="frame" x="23" y="51" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zzf-1b-2Be">
+                                        <rect key="frame" x="23" y="149" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="target"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="via-ue-q4W">
+                                        <rect key="frame" x="23" y="239" width="64" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="rules"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYO-wM-eF3">
+                                        <rect key="frame" x="23" y="336" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="users"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEm-0Y-4Yz">
+                                        <rect key="frame" x="23" y="413" width="66" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="leaderBaord"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBV-7B-Y3Z">
+                                        <rect key="frame" x="23" y="484" width="54" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="createOrJoin"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <viewLayoutGuide key="safeArea" id="Wkf-xJ-yzA"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.11860726104713304" green="0.3379727933328508" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="voB-LZ-Rfs" firstAttribute="trailing" secondItem="y15-Pg-KZa" secondAttribute="trailing" constant="110" id="4ch-4m-jIP"/>
                             <constraint firstItem="J9x-zz-2Ia" firstAttribute="leading" secondItem="voB-LZ-Rfs" secondAttribute="leading" constant="109" id="5b8-Rh-gNI"/>
@@ -268,6 +332,7 @@
                             <constraint firstItem="J9x-zz-2Ia" firstAttribute="top" secondItem="Eoj-E2-zOL" secondAttribute="bottom" constant="41" id="auT-9m-EMM"/>
                             <constraint firstItem="Eoj-E2-zOL" firstAttribute="top" secondItem="A3Q-Lx-g0P" secondAttribute="top" id="cUi-gr-q4u"/>
                             <constraint firstItem="RK2-j4-WTp" firstAttribute="top" secondItem="J9x-zz-2Ia" secondAttribute="bottom" constant="53" id="gVG-cr-GNR"/>
+                            <constraint firstItem="Eoj-E2-zOL" firstAttribute="leading" secondItem="voB-LZ-Rfs" secondAttribute="leading" id="jKg-50-7xb"/>
                             <constraint firstItem="Eoj-E2-zOL" firstAttribute="leading" secondItem="voB-LZ-Rfs" secondAttribute="leading" id="nKT-EZ-9xt"/>
                             <constraint firstItem="voB-LZ-Rfs" firstAttribute="trailing" secondItem="RK2-j4-WTp" secondAttribute="trailing" constant="110" id="ojd-zY-2qQ"/>
                             <constraint firstItem="voB-LZ-Rfs" firstAttribute="trailing" secondItem="J9x-zz-2Ia" secondAttribute="trailing" constant="110" id="u9O-Es-FtD"/>
@@ -276,15 +341,24 @@
                         <viewLayoutGuide key="safeArea" id="voB-LZ-Rfs"/>
                     </view>
                     <connections>
+                        <outlet property="coverScreenButton" destination="cc2-zg-ZMm" id="al9-3g-wh6"/>
                         <outlet property="createGameButton" destination="y15-Pg-KZa" id="xQB-Tr-p8o"/>
+                        <outlet property="createOrJoinButton" destination="sBV-7B-Y3Z" id="kmY-9s-wyU"/>
                         <outlet property="currentGameBUtton" destination="J9x-zz-2Ia" id="9vn-3y-xzc"/>
                         <outlet property="joinGameButton" destination="RK2-j4-WTp" id="ahR-IT-rgO"/>
+                        <outlet property="leaderBoardButton" destination="cEm-0Y-4Yz" id="Ajg-oE-sji"/>
                         <outlet property="logOutButton" destination="I0O-Ki-EfX" id="oAt-C4-9n4"/>
+                        <outlet property="menuCurveImageView" destination="IUd-UY-lAT" id="iMv-Er-bj0"/>
+                        <outlet property="menuView" destination="la3-90-u1Q" id="6Er-BS-SnZ"/>
+                        <outlet property="profileImageView" destination="zFe-yB-AwF" id="iFT-kd-Lpd"/>
+                        <outlet property="rulesButton" destination="via-ue-q4W" id="g7S-vM-cwY"/>
+                        <outlet property="targetButton" destination="Zzf-1b-2Be" id="BJZ-AM-dcl"/>
+                        <outlet property="usersButton" destination="YYO-wM-eF3" id="75b-UE-mac"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnz-Qr-dGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="160"/>
+            <point key="canvasLocation" x="1760.8" y="64.31784107946028"/>
         </scene>
         <!--Join Game View Controller-->
         <scene sceneID="fx9-te-xx8">
@@ -385,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6G-Ne-mIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="184"/>
+            <point key="canvasLocation" x="3537" y="-67"/>
         </scene>
         <!--Create Game View Controller-->
         <scene sceneID="nPp-Xt-E2O">
@@ -437,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kG-Ab-fqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="931"/>
+            <point key="canvasLocation" x="2822" y="1109"/>
         </scene>
         <!--Current Game View Controller-->
         <scene sceneID="AF3-8e-vnz">
@@ -489,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9q-ni-JbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="-600.44977511244383"/>
+            <point key="canvasLocation" x="2822" y="-964"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="IEY-U1-Wbl">
@@ -579,12 +653,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCf-Tf-cxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818" y="-277"/>
+            <point key="canvasLocation" x="497" y="-896"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="createOrJoin" width="50" height="50"/>
+        <image name="hamburger" width="48" height="48"/>
+        <image name="leaderBaord" width="50" height="50"/>
+        <image name="profile" width="50" height="50"/>
+        <image name="rules" width="50" height="50"/>
+        <image name="target" width="50" height="50"/>
+        <image name="users" width="50" height="50"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="28s-If-0Xb"/>
+        <segue reference="3fr-SC-hUc"/>
         <segue reference="UHz-KF-6tk"/>
-        <segue reference="r59-bn-hP6"/>
+        <segue reference="Tsm-hI-1LD"/>
     </inferredMetricsTieBreakers>
 </document>

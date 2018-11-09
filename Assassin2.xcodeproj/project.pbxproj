@@ -83,19 +83,43 @@
 			isa = PBXGroup;
 			children = (
 				A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */,
-				A515AECA2188E8FA00A2F2AE /* ViewController.swift */,
+				A59E728C2193AF57008CA63D /* Model */,
+				A59E728D2193AF6C008CA63D /* View */,
+				A59E728E2193AF77008CA63D /* Controller */,
+				A515AECF2188E8FC00A2F2AE /* Assets.xcassets */,
+				A515AED42188E8FC00A2F2AE /* Info.plist */,
+			);
+			path = Assassin2;
+			sourceTree = "<group>";
+		};
+		A59E728C2193AF57008CA63D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A59E728D2193AF6C008CA63D /* View */ = {
+			isa = PBXGroup;
+			children = (
 				A515AECC2188E8FA00A2F2AE /* Main.storyboard */,
+				A515AED12188E8FC00A2F2AE /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A59E728E2193AF77008CA63D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A515AECA2188E8FA00A2F2AE /* ViewController.swift */,
 				A515AEE42188F20D00A2F2AE /* joinGameViewController.swift */,
 				A515AEE02188F18E00A2F2AE /* createGameViewController.swift */,
 				A515AEE22188F19E00A2F2AE /* currentGameViewController.swift */,
 				A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */,
 				A515AEDA2188EB7200A2F2AE /* logInViewController.swift */,
 				A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */,
-				A515AECF2188E8FC00A2F2AE /* Assets.xcassets */,
-				A515AED12188E8FC00A2F2AE /* LaunchScreen.storyboard */,
-				A515AED42188E8FC00A2F2AE /* Info.plist */,
 			);
-			path = Assassin2;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D3F34A3AD486E11A6D2FCA83 /* Frameworks */ = {
@@ -200,11 +224,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
