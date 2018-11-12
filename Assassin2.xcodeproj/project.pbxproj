@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75EEB82C2199003200125AEB /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EEB82B2199003200125AEB /* GameManager.swift */; };
 		A515AEC92188E8FA00A2F2AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */; };
 		A515AECB2188E8FA00A2F2AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AECA2188E8FA00A2F2AE /* ViewController.swift */; };
 		A515AECE2188E8FA00A2F2AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A515AECC2188E8FA00A2F2AE /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75EEB82B2199003200125AEB /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assassin2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A515AEC52188E8FA00A2F2AE /* Assassin2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assassin2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A515AEC82188E8FA00A2F2AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				A515AEE22188F19E00A2F2AE /* currentGameViewController.swift */,
 				A515AEDE2188EFEB00A2F2AE /* menuViewController.swift */,
 				A515AEDA2188EB7200A2F2AE /* logInViewController.swift */,
+				75EEB82B2199003200125AEB /* GameManager.swift */,
 				A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */,
 			);
 			path = Controller;
@@ -225,13 +228,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A515AEE52188F20D00A2F2AE /* joinGameViewController.swift in Sources */,
+				75EEB82C2199003200125AEB /* GameManager.swift in Sources */,
 				A515AECB2188E8FA00A2F2AE /* ViewController.swift in Sources */,
 				A515AEDB2188EB7200A2F2AE /* logInViewController.swift in Sources */,
 				A515AEE12188F18E00A2F2AE /* createGameViewController.swift in Sources */,

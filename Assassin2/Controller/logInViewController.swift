@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class logInViewController: UIViewController {
 
@@ -24,6 +25,18 @@ class logInViewController: UIViewController {
 
     @IBAction func logInTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "loginToMenuSegue", sender: self)
+        guard usernameTextField.text != nil, passwordTextField.text != nil else {
+            return
+        }
+        
+        PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
+            if error != nil {
+
+            } else {
+
+            }
+        }
+        
 
     }
     @IBAction func toRegisterTapped(_ sender: Any) {

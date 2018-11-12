@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Parse
 class registerViewController: UIViewController {
 
     @IBOutlet weak var toLogInButton: UIButton!
@@ -26,7 +26,26 @@ class registerViewController: UIViewController {
 
     @IBAction func registerTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "registerToMenuSegue", sender: self)
+        let user = PFUser()
+        
+        guard usernameTextField.text != nil, passwordTextField.text != nil,
+            phoneNumberTextField.text != nil, emailTextField.text != nil else {
+                // Present user with error message
+                return
+        }
+        
+        
+        
+        user.password = passwordTextField.text
+        user.username = usernameTextField.text
+        
+        user.signUpInBackground { (success, error) in
+            if error != nil {
 
+            } else {
+
+            }
+        }
     }
     @IBAction func toLogInTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "registerToLoginSegue", sender: self)

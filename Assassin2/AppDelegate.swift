@@ -25,9 +25,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         Parse.initialize(with: config)
+        
+        
+        if PFUser.current()?.isAuthenticated ?? false {
+            inititializeSignIn()
+        }
+        
+        
         return true
     }
     
+    func inititializeSignIn() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let menuViewController = storyboard.instantiateViewController(withIdentifier: "MainController") as? menuViewController
+        
+        DispatchQueue.main.async {
+            self.window!.rootViewController?.present(menuViewController!,
+                                                     animated: true,
+                                                     completion: nil)
+            
+        }
+    }
     // parse-dashboard --appId mileswatsonappid --masterKey 8NNzqf343nQ5masterkey --serverURL "http://assassin-manager.herokuapp.com/parse"
 
 
