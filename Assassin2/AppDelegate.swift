@@ -26,27 +26,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.initialize(with: config)
         
-        
-        if PFUser.current()?.isAuthenticated ?? false {
-            inititializeSignIn()
+        if PFUser.current() == nil {
+            goTosignIn()
+
         }
-        
         
         return true
     }
     
-    func inititializeSignIn() {
+    
+    
+    
+    func goTosignIn() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let menuViewController = storyboard.instantiateViewController(withIdentifier: "MainController") as? menuViewController
-        
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "NavController") as? UINavigationController
+
         DispatchQueue.main.async {
-            self.window!.rootViewController?.present(menuViewController!,
-                                                     animated: true,
-                                                     completion: nil)
-            
+            if let window = self.window {
+                print("Presenting Navigation Controller")
+                window.rootViewController?.present(navigationController!,
+                                                   animated: false,
+                                                   completion: nil)
+            }
         }
     }
+  
     // parse-dashboard --appId mileswatsonappid --masterKey 8NNzqf343nQ5masterkey --serverURL "http://assassin-manager.herokuapp.com/parse"
 
 

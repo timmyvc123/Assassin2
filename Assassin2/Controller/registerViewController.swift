@@ -8,14 +8,16 @@
 
 import UIKit
 import Parse
+
 class registerViewController: UIViewController {
 
     @IBOutlet weak var toLogInButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
+    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+
     
     
     override func viewDidLoad() {
@@ -25,27 +27,38 @@ class registerViewController: UIViewController {
     }
 
     @IBAction func registerTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "registerToMenuSegue", sender: self)
+        
         let user = PFUser()
         
         guard usernameTextField.text != nil, passwordTextField.text != nil,
-            phoneNumberTextField.text != nil, emailTextField.text != nil else {
+            emailTextField.text != nil else {
                 // Present user with error message
                 return
         }
-        
-        
-        
-        user.password = passwordTextField.text
+
+
         user.username = usernameTextField.text
+        user.password = passwordTextField.text
+        user.email = emailTextField.text
         
         user.signUpInBackground { (success, error) in
-            if error != nil {
-
+            if let error = error as NSError? {
+                
+                print(error.userInfo)
+                let alertController = UIAlertController(title: error.localizedDescription,
+                                                        message: nil,
+                                                        preferredStyle: .alert)
+                let retryAction = UIAlertAction(title: "Retry", style: .default, handler: nil)
+                alertController.addAction(retryAction)
+                DispatchQueue.main.async {
+                    self.present(alertController, animated: true, completion:  nil)
+                }
             } else {
-
+                self.dismiss(animated: true, completion: nil)
             }
         }
+        
+
     }
     @IBAction func toLogInTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "registerToLoginSegue", sender: self)

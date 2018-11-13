@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Parse
 
 class menuViewController: UIViewController {
 
+    
+    private enum MenuState {
+        case hidden
+        case visible
+    }
+    
     @IBOutlet weak var currentGameBUtton: UIButton!
     @IBOutlet weak var joinGameButton: UIButton!
     @IBOutlet weak var createGameButton: UIButton!
@@ -27,11 +34,13 @@ class menuViewController: UIViewController {
     @IBOutlet weak var leaderBoardButton: UIButton!
     @IBOutlet weak var createOrJoinButton: UIButton!
     
-    
+    private var state: MenuState = .hidden
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("\(#function) for Menu")
         menuView.isHidden = true
         coverScreenButton.isHidden = true
         menuCurveImageView.image = #imageLiteral(resourceName: "MenuCurve")
@@ -40,29 +49,60 @@ class menuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func currentGameTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "menuToCurrentGameSegue", sender: self)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let currentUser = PFUser.current() {
+            print("Getting games")
+            GameManager().getGame(from: currentUser) { (game, error) in
+                if let error = error {
+                    print("*** error fetching - \(error) ***")
+                } else if let game = game {
+                    print("*** have profile object - id: \(game) ***")
+                }
+            }
+        }
+        print("\(#function) for Menu")
 
     }
-    @IBAction func joinGameTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "menuToJoinGameSegue", sender: self)
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("\(#function) for Menu")
 
     }
-    @IBAction func createGameTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "menuToCreateGameSegue", sender: self)
-
-    }
+    
     @IBAction func logOutTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "logoutSegue", sender: self)
+        PFUser.logOut()
+        DispatchQueue.main.async {
+
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let navigationController = storyboard.instantiateViewController(withIdentifier: "NavController") as? UINavigationController
+            
+            self.present(navigationController!,
+                                                   animated: true,
+                                                   completion: nil)
+            
+        }
 
     }
     
     @IBAction func menuTapped(_ sender: Any) {
-        showMenu()
+        if state == .hidden {
+            showMenu()
+            state = .visible
+        } else {
+            hideMenu()
+            state = .hidden
+            
+        }
     }
     
     @IBAction func screenCoverTapped(_ sender: Any) {
         hideMenu()
+        state = .hidden
+
     }
     
     func showMenu() {
@@ -150,3 +190,4 @@ class menuViewController: UIViewController {
     */
 
 }
+
