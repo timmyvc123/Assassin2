@@ -18,6 +18,9 @@
 		A515AEE12188F18E00A2F2AE /* createGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEE02188F18E00A2F2AE /* createGameViewController.swift */; };
 		A515AEE32188F19E00A2F2AE /* currentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEE22188F19E00A2F2AE /* currentGameViewController.swift */; };
 		A515AEE52188F20D00A2F2AE /* joinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515AEE42188F20D00A2F2AE /* joinGameViewController.swift */; };
+		A5E1CF482199468500355B2C /* myGamesMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E1CF472199468500355B2C /* myGamesMessageCell.xib */; };
+		A5E1CF4C21994A4E00355B2C /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E1CF4B21994A4D00355B2C /* MessageCell.xib */; };
+		A5E1CF4E219A237600355B2C /* IndividualChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E1CF4D219A237600355B2C /* IndividualChatViewController.swift */; };
 		FE46C1880C9AF253805B8F51 /* Pods_Assassin2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0E6FD5DD7B8DB1FF3E18D0 /* Pods_Assassin2.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,9 @@
 		A515AEE02188F18E00A2F2AE /* createGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createGameViewController.swift; sourceTree = "<group>"; };
 		A515AEE22188F19E00A2F2AE /* currentGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentGameViewController.swift; sourceTree = "<group>"; };
 		A515AEE42188F20D00A2F2AE /* joinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinGameViewController.swift; sourceTree = "<group>"; };
+		A5E1CF472199468500355B2C /* myGamesMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myGamesMessageCell.xib; sourceTree = "<group>"; };
+		A5E1CF4B21994A4D00355B2C /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		A5E1CF4D219A237600355B2C /* IndividualChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualChatViewController.swift; sourceTree = "<group>"; };
 		D52FC40DEB192A820FFC7BBA /* Pods-Assassin2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assassin2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2.debug.xcconfig"; sourceTree = "<group>"; };
 		E08E6DC9F2D18C4C03409718 /* Pods-Assassin2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assassin2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assassin2/Pods-Assassin2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +108,7 @@
 		A59E728D2193AF6C008CA63D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A5E1CF49219949BF00355B2C /* cells */,
 				A515AECC2188E8FA00A2F2AE /* Main.storyboard */,
 				A515AED12188E8FC00A2F2AE /* LaunchScreen.storyboard */,
 			);
@@ -111,6 +118,7 @@
 		A59E728E2193AF77008CA63D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A5E1CF4D219A237600355B2C /* IndividualChatViewController.swift */,
 				A515AECA2188E8FA00A2F2AE /* ViewController.swift */,
 				A515AEE42188F20D00A2F2AE /* joinGameViewController.swift */,
 				A515AEE02188F18E00A2F2AE /* createGameViewController.swift */,
@@ -120,6 +128,15 @@
 				A515AEDC2188ED7C00A2F2AE /* registerViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5E1CF49219949BF00355B2C /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				A5E1CF472199468500355B2C /* myGamesMessageCell.xib */,
+				A5E1CF4B21994A4D00355B2C /* MessageCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		D3F34A3AD486E11A6D2FCA83 /* Frameworks */ = {
@@ -190,9 +207,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E1CF4C21994A4E00355B2C /* MessageCell.xib in Resources */,
 				A515AED32188E8FC00A2F2AE /* LaunchScreen.storyboard in Resources */,
 				A515AED02188E8FC00A2F2AE /* Assets.xcassets in Resources */,
 				A515AECE2188E8FA00A2F2AE /* Main.storyboard in Resources */,
+				A5E1CF482199468500355B2C /* myGamesMessageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A515AEE52188F20D00A2F2AE /* joinGameViewController.swift in Sources */,
+				A5E1CF4E219A237600355B2C /* IndividualChatViewController.swift in Sources */,
 				A515AECB2188E8FA00A2F2AE /* ViewController.swift in Sources */,
 				A515AEDB2188EB7200A2F2AE /* logInViewController.swift in Sources */,
 				A515AEE12188F18E00A2F2AE /* createGameViewController.swift in Sources */,

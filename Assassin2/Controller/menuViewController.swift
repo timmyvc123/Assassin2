@@ -34,7 +34,8 @@ class menuViewController: UIViewController {
         super.viewDidLoad()
         menuView.isHidden = true
         coverScreenButton.isHidden = true
-        menuCurveImageView.image = #imageLiteral(resourceName: "MenuCurve")
+        menuCurveImageView.image = #imageLiteral(resourceName: "MenuCurveFlipped")
+        menuCurveImageView.transform = CGAffineTransform(scaleX: -1, y: 1)
         hideMenu()
 
         // Do any additional setup after loading the view.
@@ -107,24 +108,24 @@ class menuViewController: UIViewController {
         
         // animation for icons #1 and #6
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
-            self.profileImageView.transform = CGAffineTransform(translationX: -self.menuView.frame.width, y: 0)
-            self.createOrJoinButton.transform = CGAffineTransform(translationX: -self.menuView.frame.width, y: 0)
+            self.profileImageView.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
+            self.createOrJoinButton.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
         })
         
         // animation for icons #2 and #5
         UIView.animate(withDuration: 0.4, delay: 0.1, options: [.curveEaseOut, .allowUserInteraction], animations: {
-            self.targetButton.transform = CGAffineTransform(translationX: -self.menuView.frame.width, y: 0)
-            self.leaderBoardButton.transform = CGAffineTransform(translationX: -self.menuView.frame.width, y: 0)
+            self.targetButton.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
+            self.leaderBoardButton.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
         })
         // menuCurveImage goes away (provides bubble animation)
         UIView.animate(withDuration: 0.4, delay: 0.2, options: .curveEaseOut, animations: {
-            self.menuCurveImageView.transform = CGAffineTransform(translationX: -self.menuCurveImageView.frame.width, y: 0)
+            self.menuCurveImageView.transform = CGAffineTransform(translationX: +self.menuCurveImageView.frame.width, y: 0)
         })
         
         // animation for icons #3 and #4
         UIView.animate(withDuration: 0.4, delay: 0.2, options: [.curveEaseOut, .allowUserInteraction], animations: {
-            self.rulesButton.transform = CGAffineTransform(translationX: -self.menuView.frame.width, y: 0)
-            self.usersButton.transform = CGAffineTransform(translationX: -self.menuView.frame.width, y: 0)
+            self.rulesButton.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
+            self.usersButton.transform = CGAffineTransform(translationX: +self.menuView.frame.width, y: 0)
         }) { success in
             self.menuView.isHidden = true
         }
@@ -140,7 +141,7 @@ class menuViewController: UIViewController {
     
 
     /*
-    // MARK: - Navigation
+    // MARK: + Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
